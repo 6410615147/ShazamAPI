@@ -10,13 +10,13 @@ import Foundation
 func shazam(filePath: String, completion: @escaping (String) -> Void) {
     let headers = [
         "content-type": "multipart/form-data; boundary=---011000010111000001101001",
-        "X-RapidAPI-Key": "73eea4c305msh6ca99d72a4752d0p1ccafejsn5055b66c8b80",
-        "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com"
+        "X-RapidAPI-Key": "23740506bdmsh291e05b07588cefp17732ejsn2252d4a7605a",
+        "X-RapidAPI-Host": "shazam-api-free.p.rapidapi.com"
     ]
     
     let request = NSMutableURLRequest(url: NSURL(string: "https://shazam-api6.p.rapidapi.com/shazam/recognize/")! as URL,
                                             cachePolicy: .useProtocolCachePolicy,
-                                        timeoutInterval: 10.0)
+                                        timeoutInterval: 20.0)
     
     let boundary = "---011000010111000001101001"
     request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")

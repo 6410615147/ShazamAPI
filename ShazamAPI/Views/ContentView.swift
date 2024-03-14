@@ -36,6 +36,10 @@ struct ContentView: View {
             }
             
             VStack {
+                Text(viewModel.message)
+                    .foregroundColor(.white)
+                    .font(.system(size: 20))
+                
                 if let track = viewModel.result {
                     
                     if let coverArtUrl = URL(string: track.images.coverart) {
@@ -44,26 +48,35 @@ struct ContentView: View {
                             image
                                 .resizable()
                                 .scaledToFit()
-                                .cornerRadius(25)
                         } placeholder: {
                             ProgressView()
                         }
-                        .frame(width: 100, height: 100)
+                        .frame(width: 300, height: 300)
+                        .cornerRadius(25)
                     }
                     
-                    Text("Title: \(track.title)")
-                    Text("Subtitle: \(track.subtitle)")
+                    VStack(alignment: .leading) {
+                        Text("Title: ").bold() + Text("\(track.title)")
+                        Text("Artist: ").bold() + Text(track.subtitle)
                     
-                    if let url = URL(string: track.url) {
-                        Link(destination: url) {
-                            Image(systemName: "link.circle.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.blue)
+                        HStack{
+                            if let url = URL(string: track.url) {
+                                Link(destination: url) {
+                                    Image(systemName: "link.circle.fill")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                        .foregroundColor(.black.opacity(0.7))
+                                }
+                            }
                         }
-                    } else {
-                        Text("URL not found")
+                        .frame(width: 250, alignment: .center)
                     }
+                    .padding()
+                    .background(Color.white.opacity(0.8))
+                    .cornerRadius(7)
+                    .frame(width: 300)
+                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    
                 }
                 else {
                     Image("default")
@@ -72,8 +85,6 @@ struct ContentView: View {
                         .frame(width: 300, height: 300)
                         .cornerRadius(25)
                 }
-                Text(viewModel.message)
-                    .background()
                 
                 Button(isRecording ? "Stop Recording" : "Start Recording") {
                     isRecording.toggle()

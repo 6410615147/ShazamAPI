@@ -9,13 +9,14 @@ import Foundation
 
 class AudioViewModel: ObservableObject {
     private var audioManager = AudioManager()
-    @Published var message: String = "Start Record"
+    @Published var message: String = ""
     @Published var result: Track?
     @Published var sectionUrl: String?
     
     func startRecordingTapped() {
         audioManager.requestMicrophoneAccess()
         audioManager.startRecording()
+        message = ""
     }
     
     func stopRecordingTapped() {
@@ -36,15 +37,9 @@ class AudioViewModel: ObservableObject {
                 
                 if let track = response.track {
                     self.result = track
-                    
-                    print("Title: \(self.result?.title ?? "Title not found")")
-                    print("Subtitle: \(self.result?.subtitle ?? "Subtitle not found")")
-                    print("Cover Art: \(self.result?.images.coverart ?? "Cover art not found")")
-                    print("URL: \(self.result?.url ?? "URL not found")")
-                    
                     self.message = "Track Found!"
                 } else {
-                    self.message = "No track data found"
+                    self.message = "No track data found."
                 }
                 
             }
