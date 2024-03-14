@@ -11,6 +11,10 @@
 		5E51E6ED2BA196F100E39155 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51E6EC2BA196F100E39155 /* ContentView.swift */; };
 		5E51E6EF2BA196F300E39155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E51E6EE2BA196F300E39155 /* Assets.xcassets */; };
 		5E51E6F22BA196F300E39155 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E51E6F12BA196F300E39155 /* Preview Assets.xcassets */; };
+		5E51E6FE2BA197A600E39155 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51E6FD2BA197A600E39155 /* ModelData.swift */; };
+		5E51E7002BA19DF000E39155 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51E6FF2BA19DF000E39155 /* AudioManager.swift */; };
+		5E51E7022BA1A22C00E39155 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51E7012BA1A22C00E39155 /* AudioViewModel.swift */; };
+		5E51E7042BA1D2CB00E39155 /* ResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51E7032BA1D2CB00E39155 /* ResponseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		5E51E6EC2BA196F100E39155 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5E51E6EE2BA196F300E39155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E51E6F12BA196F300E39155 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E51E6FD2BA197A600E39155 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		5E51E6FF2BA19DF000E39155 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		5E51E7012BA1A22C00E39155 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
+		5E51E7032BA1D2CB00E39155 /* ResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,10 @@
 		5E51E6E92BA196F100E39155 /* ShazamAPI */ = {
 			isa = PBXGroup;
 			children = (
+				5E51E6FC2BA1976B00E39155 /* Managers */,
+				5E51E6FB2BA1974C00E39155 /* Views */,
+				5E51E6FA2BA1973E00E39155 /* Preview Data */,
 				5E51E6EA2BA196F100E39155 /* ShazamAPIApp.swift */,
-				5E51E6EC2BA196F100E39155 /* ContentView.swift */,
 				5E51E6EE2BA196F300E39155 /* Assets.xcassets */,
 				5E51E6F02BA196F300E39155 /* Preview Content */,
 			);
@@ -65,6 +75,32 @@
 				5E51E6F12BA196F300E39155 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5E51E6FA2BA1973E00E39155 /* Preview Data */ = {
+			isa = PBXGroup;
+			children = (
+				5E51E6FD2BA197A600E39155 /* ModelData.swift */,
+			);
+			path = "Preview Data";
+			sourceTree = "<group>";
+		};
+		5E51E6FB2BA1974C00E39155 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E51E6EC2BA196F100E39155 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E51E6FC2BA1976B00E39155 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5E51E6FF2BA19DF000E39155 /* AudioManager.swift */,
+				5E51E7012BA1A22C00E39155 /* AudioViewModel.swift */,
+				5E51E7032BA1D2CB00E39155 /* ResponseManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +175,10 @@
 			files = (
 				5E51E6ED2BA196F100E39155 /* ContentView.swift in Sources */,
 				5E51E6EB2BA196F100E39155 /* ShazamAPIApp.swift in Sources */,
+				5E51E7022BA1A22C00E39155 /* AudioViewModel.swift in Sources */,
+				5E51E7002BA19DF000E39155 /* AudioManager.swift in Sources */,
+				5E51E7042BA1D2CB00E39155 /* ResponseManager.swift in Sources */,
+				5E51E6FE2BA197A600E39155 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +315,7 @@
 				DEVELOPMENT_TEAM = L4443B994J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to analyze and identify songs.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,6 +326,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn436.ShazamAPI.ShazamAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -304,6 +346,7 @@
 				DEVELOPMENT_TEAM = L4443B994J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to analyze and identify songs.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,6 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn436.ShazamAPI.ShazamAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
